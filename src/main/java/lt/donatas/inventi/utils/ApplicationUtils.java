@@ -44,5 +44,8 @@ public class ApplicationUtils {
         if (file.isEmpty()) {
             throw new FileUploadException("File is empty, please check file content");
         }
+        if (!file.getOriginalFilename().endsWith(".csv")){
+            throw new FileUploadException("File is not of type CSV, please check the files extension");
+        }
     }
 }
